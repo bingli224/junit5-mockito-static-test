@@ -1,0 +1,47 @@
+
+plugins {
+	id 'java'
+	id 'idea'
+}
+
+apply plugin: 'java'
+
+dependencies {
+	testRuntime 'org.junit.platform:junit-platform-runner:1.5.2'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.7.1'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.1'
+
+	testImplementation 'org.mockito:mockito-core:3.6.0'
+	testImplementation 'org.mockito:mockito-inline:3.6.0'
+	testImplementation 'org.mockito:mockito-junit-jupiter:3.6.0'
+
+	testImplementation 'net.bytebuddy:byte-buddy:1.10.20'
+	testImplementation 'net.bytebuddy:byte-buddy-agent:1.10.20'
+	testImplementation 'org.objenesis:objenesis:3.1'
+}
+
+repositories {
+	mavenCentral()
+	jcenter()
+}
+
+sourceSets {
+	main {
+		java {
+			srcDirs = [
+			]
+		}
+	}
+	test {
+		java {
+			srcDirs = [
+				'src/test'
+			]
+		}
+	}
+}
+
+test {
+	useJUnitPlatform ( )
+}
